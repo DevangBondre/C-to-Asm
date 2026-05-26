@@ -1,15 +1,16 @@
-//Objective:
+//**Objective:**
+
 C code which prints the sum of all elements of an array
 
-//Tools used:
+//**Tools used:**
+
 Visual studio : Used to write C code and compile it into an executable.
 Ghidra : Static analysis 
 X64Dbg : Dynamic analysis
 
-/Exe build: 
+//**Exe build: **
 This program was compiled in debug build with 0d optimization.
 
-/Source code:
 
 ![source code](images/source%20code.PNG)
 
