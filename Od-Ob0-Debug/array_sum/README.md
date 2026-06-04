@@ -4,9 +4,9 @@ C code which prints the sum of all elements of an array
 
 ## **Tools used:**
 
-Visual studio : Used to write C code and compile it into an executable.
-Ghidra : Static analysis 
-X64Dbg : Dynamic analysis
+Visual studio : Used to write C code and compile it into an executable.<br>
+Ghidra : Static analysis <br>
+X64Dbg : Dynamic analysis<br>
 
 ## **Exe build:**
 
