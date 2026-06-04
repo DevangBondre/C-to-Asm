@@ -8,9 +8,11 @@ Visual studio : Used to write C code and compile it into an executable.
 Ghidra : Static analysis 
 X64Dbg : Dynamic analysis
 
-//**Exe build: **
+//**Exe build:**
+
 This program was compiled in debug build with 0d optimization.
 
+//**Visual studio**
 
 ![source code](images/source%20code.PNG)
 
@@ -19,6 +21,7 @@ function called "sum_array". Where the value of sum is initially set to 0 and th
 as the loop runs resulting in addition of every element into the sum wtih each loop and the function then 
 returns the final value of sum  which is then used in the printf statement.
 
+//**Ghidra static analysis**
 ![decompiled C](images/decompiled%20C.PNG)
 
 After you build the C program and analyze it in Ghidra you can find the main function using the Strings feature where 
@@ -100,4 +103,22 @@ CALL    printf
 ```
 If we remeber from instruction i mentioned before we can see the valye of EAX being moved into EDX after the function call of "sum_array" which indicates the returned value is stored in EAX which we confirmed a momement ago.Thus giving us the final result.
 
+
+//**X64Dbg Dynamic analysis**
+
+![assembly](images/xdbg%20asm.PNG)
+
+Using defined strings we can get into main function where we can see the initialization of our array and array size at a rbp offset location in the memory.
+
+
+![assembly](images/xdbg%20asm(2).PNG)
+
+Here we can see we are moving some data in edx and loading address in rcx and then calling the `sum array` funciton. According to windows calling conventions the parameters gets passed in order `RCX-RDX-R8-R9`.Thus we can deduce that this function call is going to take `EDX` and `RCX` as arguments which if we check previous code we can see that  `[rbp+34]` is our first element of array 
+and `[rbp+8]` is array size.
+We should get the addition of our array after the `sum array` function executes which according to `windows calling conventions` integer return values from functions gets stored into `RAX`. 
+
+
+![registers](images/registers.PNG)
+
+And as we guessed we can see that the function output got stored in RAX which is 15. Values in registers in debuggers is genrally stored in `HEX` format. Thus if you convert `Hex 15` to `Dec` we get `Dec 21` which if we manually check `1+2+3+4+5+6 = 21` which is correct output
 
