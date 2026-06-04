@@ -12,8 +12,6 @@ C code which prints the sum of all elements of an array
 
 This program was compiled in debug build with 0d optimization.
 
-## **Visual studio**
-
 ![source code](images/source%20code.PNG)
 
 The code logic is very simple it has a array of integers which is getting passed through a loop in a 
@@ -21,7 +19,6 @@ function called "sum_array". Where the value of sum is initially set to 0 and th
 as the loop runs resulting in addition of every element into the sum wtih each loop and the function then 
 returns the final value of sum  which is then used in the printf statement.
 
-//**Ghidra static analysis**
 ![decompiled C](images/decompiled%20C.PNG)
 
 After you build the C program and analyze it in Ghidra you can find the main function using the Strings feature where 
@@ -103,8 +100,6 @@ CALL    printf
 ```
 If we remeber from instruction i mentioned before we can see the valye of EAX being moved into EDX after the function call of "sum_array" which indicates the returned value is stored in EAX which we confirmed a momement ago.Thus giving us the final result.
 
-
-//**X64Dbg Dynamic analysis**
 
 ![assembly](images/xdbg%20asm.PNG)
 
