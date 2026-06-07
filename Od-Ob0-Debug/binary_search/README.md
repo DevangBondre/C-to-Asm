@@ -183,7 +183,7 @@ This completes the Binary Search implementation. By repeatedly halving the searc
 
 ### Successful Search
 
-[!number found](images/found.png)
+![number found](images/found.png)
 <br>
 
 Search progression:
