@@ -78,22 +78,19 @@ for (local_f4 = 0; local_140[local_f4] != 0; local_f4 = local_f4 + 1) {
 
 iVar1 = strcmp(local_140, string);
 ```
+The loop iterates through every character of the input until the null terminator is reached.
+For each iteration, the current character is XORed with the value `0x0A`.
+Once the transformation is complete, the modified input is compared against the hardcoded string using `strcmp()`.
 
-After renaming variables, the logic becomes:
 
 ```c
-for (local_f4 = 0; user_input[local_f4] != '\0'; local_f4++) {
-    user_input[local_f4] ^= 0x0A;
+for (i = 0; user_input[i] != '\0'; i++) {
+    user_input[i] ^= 0x0A;
 }
 
 iVar1 = strcmp(user_input, string);
 ```
-
-The loop iterates through every character of the input until the null terminator is reached.
-
-For each iteration, the current character is XORed with the value `0x0A`.
-
-Once the transformation is complete, the modified input is compared against the hardcoded string using `strcmp()`.
+After renaming variables, the logic becomes:
 
 ## Reconstructing the Original Password
 
@@ -125,9 +122,10 @@ for c in s:
 print(result)
 ```
 
-Output:
+Xor result:
 
 ![Xor result](images/xor.png)
+
 
 ## Output 
 
