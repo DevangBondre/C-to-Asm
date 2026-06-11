@@ -90,7 +90,7 @@ for (i = 0; user_input[i] != '\0'; i++) {
 
 iVar1 = strcmp(user_input, string);
 ```
-After renaming variables, the logic becomes:
+After renaming variables, the logic becomes lot clear.
 
 ## Reconstructing the Original Password
 
